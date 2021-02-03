@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/Card_View"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/item_flag"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/item_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/black"
+            android:text="Country: "
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/item_capital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="15dp"
+            android:textColor="#212121"
+            android:text="Capital: "
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/item_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="15dp"
+            android:textColor="#212121"
+            android:text="Region: "
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/item_subregion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="15dp"
+            android:textColor="#212121"
+            android:text="SubRegion:"
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/item_population"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="15dp"
+            android:textColor="#212121"
+            android:text="Population:"
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/item_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="15dp"
+            android:textColor="#212121"
+            android:text="Borders: "
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/item_languages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="15dp"
+            android:textColor="#212121"
+            android:text="Languages: "
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
