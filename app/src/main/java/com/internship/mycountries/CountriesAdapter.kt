@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.squareup.picasso.Picasso
 
 class CountriesAdapter(): RecyclerView.Adapter<CountriesViewHolder>() {
     private val items: ArrayList<Countries> = ArrayList()
@@ -26,7 +26,7 @@ class CountriesAdapter(): RecyclerView.Adapter<CountriesViewHolder>() {
         holder.borders.text = currentItem.borders
         holder.languages.text = currentItem.languages
 
-        Glide.with(holder.itemView.context).load(currentItem.imageUrl).into(holder.flag)
+        Picasso.get().load(currentItem.imageUrl).into(holder.flag)
     }
 
     override fun getItemCount(): Int {

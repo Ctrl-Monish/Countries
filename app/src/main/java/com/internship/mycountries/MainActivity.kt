@@ -30,32 +30,31 @@ class MainActivity : AppCompatActivity() {
     private fun fetchData() {
         val url = "https://restcountries.eu/rest/v2/region/asia"
 
-        val jsonObjectRequest = JsonObjectRequest(
+        val jsonArrayRequest = JsonArrayRequest(
             Request.Method.GET,
             url,
             null,
-            Response.Listener{response ->
-                val countryJsonArray = response.getJSONArray("")
-                val countryArray = ArrayList<Countries>()
-                for (i in 0 until countryJsonArray.length()) {
-                    val countryJsonObject = countryJsonArray.getJSONObject(i)
-                    val country = Countries(
-                        countryJsonObject.getString("name"),
-                        countryJsonObject.getString("capital"),
-                        countryJsonObject.getString("region"),
-                        countryJsonObject.getString("subregion"),
-                        countryJsonObject.getString("population"),
-                        countryJsonObject.getString("borders"),
-                        countryJsonObject.getString("languages"),
-                        countryJsonObject.getString("flag"),
-                    )
-                    countryArray.add(country)
-                }
-                mAdapter.updateCountry(countryArray)
-            },
+                {response ->
+                    val countryArray = ArrayList<Countries>()
+                    for (i in 0 until response.length()) {
+                        val countryJsonObject = response.getJSONObject(i)
+                        val country = Countries(
+                            countryJsonObject.getString("name"),
+                            countryJsonObject.getString("capital"),
+                            countryJsonObject.getString("region"),
+                            countryJsonObject.getString("subregion"),
+                            countryJsonObject.getString("population"),
+                            countryJsonObject.getString("borders"),
+                            countryJsonObject.getString("languages"),
+                            countryJsonObject.getString("flag"),
+                        )
+                        countryArray.add(country)
+                    }
+                    mAdapter.updateCountry(countryArray)
+                },
             {
             }
         )
-        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
+        MySingleton.getInstance(this).addToRequestQueue(jsonArrayRequest)
     }
 }
